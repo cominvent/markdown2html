@@ -2,7 +2,7 @@ Markdown2HTML
 =============
 
 An extremely simple Markdown to HTML converter,
-powered by [MarkdownJ](http://code.google.com/p/markdownj/).
+powered by [Pegdown](https://github.com/vsch/pegdown)
 
 Available in command line and GUI mode.
 
@@ -12,7 +12,7 @@ It is licensed under the BSD license.
 Requirements
 ------------
 
-You need Java JVM 1.6 or newer installed on your machine.
+You need Java JVM 1.8 or newer installed on your machine.
 
 
 Usage
@@ -37,6 +37,13 @@ Its content will be appended to the converted `markdownFile` file.
 which contains the same name as the `markdownFile`, with the .html extension.
 - `-out file.html`: enter this to specify the name of the converted file.
 - `-d directory`: enter this to specify the directory of the converted files.
+
+Markdown support
+----------------
+Refer to the [Pegdown project](https://github.com/vsch/pegdown) for details about 
+supported markdown features. It basically supports full standard markdown
+plus a bunch of extensions, including tables, definition lists etc, as found 
+in [Github flavoured MarkDown](https://help.github.com/articles/github-flavored-markdown/).
 
 GUI Screenshot
 --------------

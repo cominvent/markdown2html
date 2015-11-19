@@ -1,6 +1,7 @@
 package com.nilhcem.md2html;
 
 import java.awt.EventQueue;
+import java.io.File;
 import java.io.FileNotFoundException;
 import javax.swing.UIManager;
 import com.nilhcem.md2html.console.ArgsParser;
@@ -32,7 +33,6 @@ public final class App {
 				if(args[i].equals("-d")){
 					idxDir = i+1;
 				}
-				//System.out.println(args[i]);
 			}
 			
 			if(idxDir>0){
