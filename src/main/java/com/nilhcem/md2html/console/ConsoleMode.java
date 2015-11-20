@@ -1,11 +1,12 @@
 package com.nilhcem.md2html.console;
 
+import com.nilhcem.md2html.App;
+import org.apache.commons.io.FileUtils;
+import org.pegdown.PegDownProcessor;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.apache.commons.io.FileUtils;
-import org.pegdown.PegDownProcessor;
-import org.pegdown.Extensions;
 
 /**
  * Converts the markdown file in a HTML file when the application is running in command line.
@@ -14,7 +15,6 @@ import org.pegdown.Extensions;
  * @since 1.0
  */
 public final class ConsoleMode {
-	private PegDownProcessor processor;
 
 	/**
 	 * Converts the file in HTML depending on the options sent in parameter.
@@ -29,7 +29,7 @@ public final class ConsoleMode {
 		}
 
 		try {
-			processor = new PegDownProcessor(Extensions.ALL);
+			PegDownProcessor processor = new PegDownProcessor(App.pegdownOptions);
 			String fileContent = FileUtils.readFileToString(file, "UTF-8");
 			String htmlContent = getFileContent(args.getHeaderFile()) + processor.markdownToHtml(fileContent) + getFileContent(args.getFooterFile());
 

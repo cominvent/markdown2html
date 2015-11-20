@@ -1,12 +1,11 @@
 Markdown2HTML
 =============
 
-An extremely simple Markdown to HTML converter,
-powered by [Pegdown](https://github.com/vsch/pegdown)
+A powerful Markdown to HTML converter, powered by [Pegdown](https://github.com/vsch/pegdown)
 
 Available in command line and GUI mode.
 
-It is licensed under the BSD license.
+Licensed under the BSD license.
 
 
 Requirements
@@ -44,12 +43,18 @@ Refer to the [Pegdown project](https://github.com/vsch/pegdown) for details abou
 supported markdown features. It basically supports full standard markdown
 plus a bunch of extensions, including tables, definition lists etc, as found 
 in [Github flavoured MarkDown](https://help.github.com/articles/github-flavored-markdown/).
+Includes CSS style sheet for a GitHub-like look.
 
 GUI Screenshot
 --------------
 
 <img src="http://nilhcem.github.com/screenshots/markdown2html.png" width="814" height="564" />
 
+
+Versions
+--------
+Latest version: 1.1-SNAPSHOT
+See [change log](CHANGES.md)
 
 Building it
 -----------
