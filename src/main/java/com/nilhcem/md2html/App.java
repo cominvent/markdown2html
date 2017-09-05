@@ -1,14 +1,15 @@
 package com.nilhcem.md2html;
 
-import java.awt.EventQueue;
-import java.io.File;
-import java.io.FileNotFoundException;
-import javax.swing.UIManager;
 import com.nilhcem.md2html.console.ArgsParser;
 import com.nilhcem.md2html.console.ConsoleMode;
 import com.nilhcem.md2html.console.DisplayUsageException;
 import com.nilhcem.md2html.gui.MainFrame;
 import org.pegdown.Extensions;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 /**
  * Entry point of the application.
@@ -25,13 +26,13 @@ public final class App {
 			| Extensions.EXTANCHORLINKS
 			| Extensions.FENCED_CODE_BLOCKS
 			| Extensions.FORCELISTITEMPARA
-			| Extensions.HARDWRAPS
+//			| Extensions.HARDWRAPS
 			| Extensions.RELAXEDHRULES
 			| Extensions.SMARTS
 			| Extensions.STRIKETHROUGH
 			| Extensions.TABLES
 			| Extensions.TASKLISTITEMS;
-
+	
 	private App() {}
 
 	/**
@@ -69,6 +70,14 @@ public final class App {
 			
 			ArgsParser params = new ArgsParser();
 			params.checkArgs(args);
+			
+			
+//			if (!params.getExtensions().isEmpty()) {
+//				int opts = 0;
+//				for (String ext : params.getExtensions()) {
+//					opts += Extensions.ALL_WITH_OPTIONALS
+//				}
+//			}
 
 			if (params.isConsoleMode()) { // Command line
 				new ConsoleMode().process(params);

@@ -1,8 +1,12 @@
 package com.nilhcem.md2html.console;
 
-import java.awt.GraphicsEnvironment;
-import java.io.FileNotFoundException;
 import org.apache.commons.io.FilenameUtils;
+
+import java.awt.*;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Program arguments parser.
@@ -16,6 +20,7 @@ public final class ArgsParser {
 	private String headerFile = null;
 	private String footerFile = null;
 	private boolean consoleMode = GraphicsEnvironment.isHeadless();
+	private List<String> extensions = Collections.EMPTY_LIST;
 
 	/**
 	 * Checks arguments and determine the running mode (command line or GUI).
@@ -35,6 +40,7 @@ public final class ArgsParser {
 		boolean specifyOutput = false;
 		boolean specifyHeader = false;
 		boolean specifyFooter = false;
+		boolean specifyExtensions = false;
 
 		for (String arg : args) {
 			if ("-usage".equals(arg) || "-h".equals(arg) || "-help".equals(arg)) {
@@ -48,6 +54,9 @@ public final class ArgsParser {
 			} else if (specifyOutput && outputFile == null) {
 				outputFile = arg;
 				specifyOutput = false;
+			} else if (specifyExtensions && extensions == null) {
+				extensions = Arrays.asList(arg.split(","));
+				specifyExtensions = false;
 			} else {
 				if ("-out".equals(arg)) {
 					specifyOutput = true;
@@ -55,6 +64,8 @@ public final class ArgsParser {
 					specifyHeader = true;
 				} else if ("-footer".equals(arg)) {
 					specifyFooter = true;
+				} else if ("-extensions".equals(arg)) {
+					specifyExtensions = true;
 				} else if (markdownFile == null) {
 					markdownFile = arg;
 				} else {
@@ -118,4 +129,14 @@ public final class ArgsParser {
 	public String getFooterFile() {
 		return footerFile;
 	}
+
+	/**
+	 * Returns a list of specified PegDown extensions
+	 * 
+	 * @return a list of specified PegDown extensions
+	 */
+	public List<String> getExtensions() {
+		return extensions;
+	}
+
 }
