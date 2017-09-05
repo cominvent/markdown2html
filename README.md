@@ -16,7 +16,7 @@ You need Java JVM 1.8 or newer installed on your machine.
 Download
 --------
 
-Download JAR file from from the releases menu.
+Download JAR file from from the [releases](https://github.com/cominvent/markdown2html/releases/) menu.
 
 Usage
 -----
