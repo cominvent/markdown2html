@@ -1,5 +1,11 @@
 # Changelog for markdown2html
 
+## Version 1.1
+Date: 2017-09-05
+
+* Released v 1.1
+* Fixed screenshot and About text
+
 ## Version 1.1-SNAPSHOT
 Date: 2015-11-20
 

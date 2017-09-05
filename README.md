@@ -13,6 +13,10 @@ Requirements
 
 You need Java JVM 1.8 or newer installed on your machine.
 
+Download
+--------
+
+Download JAR file from from the releases menu.
 
 Usage
 -----
@@ -53,7 +57,7 @@ GUI Screenshot
 
 Versions
 --------
-Latest version: 1.1-SNAPSHOT
+Latest version: 1.1
 See [change log](CHANGES.md)
 
 Building it
